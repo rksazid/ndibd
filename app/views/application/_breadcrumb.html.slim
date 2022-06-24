@@ -1,0 +1,7 @@
+.breadcrumb-wrapper
+  nav aria-label="breadcrumb"
+    ol.breadcrumb.pt-2.pb-1.pl-0
+      li.breadcrumb-item
+        a href="#{root_path}"
+          span.mdi.mdi-home
+      = render_breadcrumbs tag: "li class='breadcrumb-item'", separator: ''
