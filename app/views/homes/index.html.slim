@@ -2,7 +2,7 @@
 section#hero.d-flex.justify-content-center.align-items-center
   .container.position-relative data-aos="zoom-in" data-aos-delay="100"
     .title
-      h1 National Dawah Institute Bangladesh
+      h1 National Dawah Institute of Bangladesh
       .h5.text-white.fst-italic In order to create efficient Islamic Scholars and responsible Citizens
     a.btn-get-started href="#"  Get Started
 /! End Hero
@@ -14,9 +14,22 @@ main#main
         h2 আমাদের সম্পর্কে
       .row
         .col-lg-6.order-1.order-lg-2 data-aos="fade-left" data-aos-delay="100"
-          img.img-fluid alt="" src="assets/img/about.jpg" /
+          = image_tag "home_1_1.jpg", class: 'img-fluid' 
+          / img.img-fluid alt="" src="assets/img/about.jpg" /
         .col-lg-6.pt-4.pt-lg-0.order-2.order-lg-1.content
           h3 ন্যাশনাল দাওয়াহ ইনস্টিটিউট
+          p
+          ul
+            li
+              i.bi.bi-check-circle
+              | ডাকো তোমার প্রভুর দিকে হিকমত ও উত্তম নসীহত সহকারে আর বিতর্ক করো উত্তম পন্থায়। ( সূরা নাহল -১২৫)
+            li
+              i.bi.bi-check-circle
+              | তার কথার চেয়ে আর কার কথা উত্তম হতে পারে যে মানুষকে আল্লাহর পথে ডাকে, নেক আমল করে আর বলে আমি আত্মসমর্পণকারী। ( সূরা হা-মিম আস- সাজদা-৩৩)
+            li
+              i.bi.bi-check-circle
+              | পবিত্র কুরআন সুন্নাহ, জ্ঞান-বিজ্ঞানের সমন্বিত চর্চা ও উৎকর্ষ সাধনের মাধ্যমে প্রকৃত দেশপ্রেমিক, খাঁটি মুসলিম দাঈ-ইলাল্লাহ তৈরীর লক্ষ্যে ২০২০ খ্রিস্টাব্দের ১ লা জানুয়ারি রাজধানী ঢাকায় প্রতিষ্ঠিত হয়  ন্যাশনাল দাওয়াহ ইনস্টিটিউট। 
+
           p.fst-italic
             | দক্ষ মুফাচ্ছির ও দাঈ ইলাল্লাহ তৈরির লক্ষ্যে
           ul
@@ -160,14 +173,14 @@ main#main
       .row data-aos="zoom-in" data-aos-delay="100"
         .col-lg-4.col-md-6.d-flex.align-items-stretch
           .course-item
-            = image_tag 'tafseer02.jpg', class: 'img-fluid'
+            = image_tag 'tafseer.png', class: 'img-fluid'
             .course-content
               .d-flex.justify-content-between.align-items-center.mb-3
                 h4 Islamic
                 / p.price $169
               h3
                 a href="#"  Diploma in Tafseerul Quran
-              p ১ বছর মেয়াদি (অনলাইন) তাফসিরুল কুরআন সার্টিফিকেট কোর্স-২০২২. দারুল উলূম দেওবন্দ, আল আযহার বিশ্ববিদ্যালয় মিশর এবং ইসলামি আরবি বিশ্ববিদ্যালয় এর সিলেবাসের সমন্বয়ে দেশের ১ম অনলাইন তাফসিরুল কুরআন কোর্স।
+              p ১ বছর মেয়াদি (অনলাইন) তাফসিরুল কুরআন সার্টিফিকেট কোর্স. দারুল উলূম দেওবন্দ, আল আযহার বিশ্ববিদ্যালয় মিশর এবং ইসলামি আরবি বিশ্ববিদ্যালয় এর সিলেবাসের সমন্বয়ে দেশের ১ম অনলাইন তাফসিরুল কুরআন কোর্স।
               / .trainer.d-flex.justify-content-between.align-items-center
               /   .trainer-profile.d-flex.align-items-center
               /     img.img-fluid alt="" src="assets/img/trainers/trainer-1.jpg" /
@@ -176,16 +189,17 @@ main#main
               /     i.bx.bx-user 50
               /     i.bx.bx-heart 65
         /! End Course Item
-        / .col-lg-4.col-md-6.d-flex.align-items-stretch.mt-4.mt-md-0
-        /   .course-item
-        /     = image_tag 'default_course_banner.jpg', class: 'img-fluid'
-        /     .course-content
-        /       .d-flex.justify-content-between.align-items-center.mb-3
-        /         h4 Marketing
-        /         p.price $250
-        /       h3
-        /         a href="course-details.html"  Search Engine Optimization
-        /       p Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.
+        .col-lg-4.col-md-6.d-flex.align-items-stretch.mt-4.mt-md-0
+          .course-item
+            = image_tag 'shariah.jpg', class: 'img-fluid'
+            .course-content
+              .d-flex.justify-content-between.align-items-center.mb-3
+                h4 Islamic Law
+                / p.price $250
+              h3
+                a href="#"  Diploma in Islamic Shariah and Conventional Law
+              p
+                | ১ বছর মেয়াদি (অনলাইন) ইসলামিক শরীয়াহ এবং প্রচলিত আইন সার্টিফিকেট কোর্স. দারুল উলূম দেওবন্দ, আল আযহার বিশ্ববিদ্যালয় মিশর এবং ইসলামি  বিশ্ববিদ্যালয় এর সিলেবাসের সমন্বয়ে দেশের ১ম অনলাইন কোর্স।
         /       .trainer.d-flex.justify-content-between.align-items-center
         /         .trainer-profile.d-flex.align-items-center
         /           img.img-fluid alt="" src="assets/img/trainers/trainer-2.jpg" /
@@ -194,23 +208,33 @@ main#main
         /           i.bx.bx-user 35
         /           i.bx.bx-heart 42
         / /! End Course Item
-        / .col-lg-4.col-md-6.d-flex.align-items-stretch.mt-4.mt-lg-0
+        .col-lg-4.col-md-6.d-flex.align-items-stretch.mt-4.mt-lg-0
           .course-item
-            = image_tag 'default_course_banner.jpg', class: 'img-fluid'
+            = image_tag 'arabic_language.jpg', class: 'img-fluid'
             .course-content
               .d-flex.justify-content-between.align-items-center.mb-3
-                h4 Content
-                p.price $180
+                h4 Language
+                / p.price $180
               h3
-                a href="course-details.html"  Copywriting
-              p Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.
-              .trainer.d-flex.justify-content-between.align-items-center
-                .trainer-profile.d-flex.align-items-center
-                  img.img-fluid alt="" src="assets/img/trainers/trainer-3.jpg" /
-                  span Brandon
-                .trainer-rank.d-flex.align-items-center
-                  i.bx.bx-user 20
-                  i.bx.bx-heart 85
+                a href="course-details.html"  Diploma in Arabic Language
+              p
+                | কাদের জন্য এ কোর্সটি?
+                br
+                | যারা আরবি ভাষায় অনর্গল কথা বলতে চান,
+                | আরবি ব্যাকরণে (নাহু,সরফ) পাণ্ডিত্য অর্জন করতে চান,
+                | যে কোন আরবি কিতাবের ইবারত ইরাব ছাড়া পড়তে চান,
+                | কুরআনের শব্দার্থ বুঝতে চান,
+                | আরবি প্রভাষক নিবন্ধনে উত্তীর্ণ হতে চান, 
+                | আরব দেশ সমূহে জব করতে চান,
+                | জুমার আরবি খুতবাহ সমূহ নিজেই প্রস্তুত করতে চান এবং 
+                | শ্রেণি কক্ষে আরবিতে পাঠদান করতে চান।
+              / .trainer.d-flex.justify-content-between.align-items-center
+              /   .trainer-profile.d-flex.align-items-center
+              /     img.img-fluid alt="" src="assets/img/trainers/trainer-3.jpg" /
+              /     span Brandon
+              /   .trainer-rank.d-flex.align-items-center
+              /     i.bx.bx-user 20
+              /     i.bx.bx-heart 85
   /! End Course Item
   /! End Popular Courses Section
   /! ======= Trainers Section =======
