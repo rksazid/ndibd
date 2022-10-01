@@ -171,71 +171,29 @@ main#main
         h2 কোর্স সমূহ
         p জনপ্রিয় কোর্স সমূহ
       .row data-aos="zoom-in" data-aos-delay="100"
-        .col-lg-4.col-md-6.d-flex.align-items-stretch
-          .course-item
-            = image_tag 'tafseer.png', class: 'img-fluid'
-            .course-content
-              .d-flex.justify-content-between.align-items-center.mb-3
-                h4 Islamic
-                / p.price $169
-              h3
-                a href="#"  Diploma in Tafseerul Quran
-              p ১ বছর মেয়াদি (অনলাইন) তাফসিরুল কুরআন সার্টিফিকেট কোর্স. দারুল উলূম দেওবন্দ, আল আযহার বিশ্ববিদ্যালয় মিশর এবং ইসলামি আরবি বিশ্ববিদ্যালয় এর সিলেবাসের সমন্বয়ে দেশের ১ম অনলাইন তাফসিরুল কুরআন কোর্স।
-              / .trainer.d-flex.justify-content-between.align-items-center
-              /   .trainer-profile.d-flex.align-items-center
-              /     img.img-fluid alt="" src="assets/img/trainers/trainer-1.jpg" /
-              /     span Antonio
-              /   .trainer-rank.d-flex.align-items-center
-              /     i.bx.bx-user 50
-              /     i.bx.bx-heart 65
-        /! End Course Item
-        .col-lg-4.col-md-6.d-flex.align-items-stretch.mt-4.mt-md-0
-          .course-item
-            = image_tag 'shariah.jpg', class: 'img-fluid'
-            .course-content
-              .d-flex.justify-content-between.align-items-center.mb-3
-                h4 Islamic Law
-                / p.price $250
-              h3
-                a href="#"  Diploma in Islamic Shariah and Conventional Law
-              p
-                | ১ বছর মেয়াদি (অনলাইন) ইসলামিক শরীয়াহ এবং প্রচলিত আইন সার্টিফিকেট কোর্স. দারুল উলূম দেওবন্দ, আল আযহার বিশ্ববিদ্যালয় মিশর এবং ইসলামি  বিশ্ববিদ্যালয় এর সিলেবাসের সমন্বয়ে দেশের ১ম অনলাইন কোর্স।
-        /       .trainer.d-flex.justify-content-between.align-items-center
-        /         .trainer-profile.d-flex.align-items-center
-        /           img.img-fluid alt="" src="assets/img/trainers/trainer-2.jpg" /
-        /           span Lana
-        /         .trainer-rank.d-flex.align-items-center
-        /           i.bx.bx-user 35
-        /           i.bx.bx-heart 42
-        / /! End Course Item
-        .col-lg-4.col-md-6.d-flex.align-items-stretch.mt-4.mt-lg-0
-          .course-item
-            = image_tag 'arabic_language.jpg', class: 'img-fluid'
-            .course-content
-              .d-flex.justify-content-between.align-items-center.mb-3
-                h4 Language
-                / p.price $180
-              h3
-                a href="course-details.html"  Diploma in Arabic Language
-              p
-                | কাদের জন্য এ কোর্সটি?
-                br
-                | যারা আরবি ভাষায় অনর্গল কথা বলতে চান,
-                | আরবি ব্যাকরণে (নাহু,সরফ) পাণ্ডিত্য অর্জন করতে চান,
-                | যে কোন আরবি কিতাবের ইবারত ইরাব ছাড়া পড়তে চান,
-                | কুরআনের শব্দার্থ বুঝতে চান,
-                | আরবি প্রভাষক নিবন্ধনে উত্তীর্ণ হতে চান, 
-                | আরব দেশ সমূহে জব করতে চান,
-                | জুমার আরবি খুতবাহ সমূহ নিজেই প্রস্তুত করতে চান এবং 
-                | শ্রেণি কক্ষে আরবিতে পাঠদান করতে চান।
-              / .trainer.d-flex.justify-content-between.align-items-center
-              /   .trainer-profile.d-flex.align-items-center
-              /     img.img-fluid alt="" src="assets/img/trainers/trainer-3.jpg" /
-              /     span Brandon
-              /   .trainer-rank.d-flex.align-items-center
-              /     i.bx.bx-user 20
-              /     i.bx.bx-heart 85
-  /! End Course Item
+        - @courses&.each_with_index do | course, idx |
+            div class="col-lg-4 col-md-6 d-flex align-items-stretch #{get_course_card_classes(idx+1)}"
+              .course-item
+                = image_tag course&.displayed_banner, class: 'img-fluid', alt: 'course-banner'
+                .course-content
+                  .d-flex.justify-content-between.align-items-center.mb-3
+                    h4 = course.course_type.title
+                    / p.price $169
+                  h3
+                    = link_to course.title, "#"
+                  p = course.short_description
+                  / .trainer.d-flex.justify-content-between.align-items-center
+                  /   .trainer-profile.d-flex.align-items-center
+                  /     img.img-fluid alt="" src="assets/img/trainers/trainer-1.jpg" /
+                  /     span Antonio
+                  /   .trainer-rank.d-flex.align-items-center
+                  /     i.bx.bx-user
+                  /     | \&nbsp;50
+                  /     | \&nbsp;&nbsp;
+                  /     | 65
+                  /       i.bx.bx-heart
+      .d-flex.justify-content-center.mt-2
+        = link_to 'View All', courses_path, class: 'fw-bold'
   /! End Popular Courses Section
   /! ======= Trainers Section =======
   / section#trainers.trainers

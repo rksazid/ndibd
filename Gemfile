@@ -40,6 +40,7 @@ gem 'amoeba'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'breadcrumbs_on_rails'
 gem 'devise'
+gem 'rails_admin', '~> 3.0'
 gem 'dotenv-rails'
 gem 'gon'
 gem 'grover'
@@ -78,3 +79,4 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'sassc-rails'

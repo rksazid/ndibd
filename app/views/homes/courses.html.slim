@@ -1,0 +1,34 @@
+main#main data-aos="fade-in" 
+  /! ======= Breadcrumbs =======
+  .breadcrumbs
+    .container
+      h2 Courses
+      p Courses offered by National Dawah institute Bangladesh
+  /! End Breadcrumbs
+  /! ======= Courses Section =======
+  section#courses.courses
+    .container data-aos="fade-up" 
+      .row data-aos="zoom-in" data-aos-delay="100" 
+        - @courses&.each_with_index do | course, idx |
+          div class="col-lg-4 col-md-6 d-flex align-items-stretch #{get_course_card_classes(idx+1)}"
+            .course-item
+              = image_tag course&.displayed_banner, class: 'img-fluid', alt: 'course-banner'
+              .course-content
+                .d-flex.justify-content-between.align-items-center.mb-3
+                  h4 = course.course_type.title
+                  / p.price $169
+                h3
+                  = link_to course.title, "#"
+                p = course.short_description
+                / .trainer.d-flex.justify-content-between.align-items-center
+                /   .trainer-profile.d-flex.align-items-center
+                /     img.img-fluid alt="" src="assets/img/trainers/trainer-1.jpg" /
+                /     span Antonio
+                /   .trainer-rank.d-flex.align-items-center
+                /     i.bx.bx-user
+                /     | \&nbsp;50
+                /     | \&nbsp;&nbsp;
+                /     | 65
+                /       i.bx.bx-heart
+        /! End Course Item
+  /! End Courses Section
