@@ -20,7 +20,6 @@ default: &default
   encoding: unicode
   username: <%= ENV.fetch("DB_USERNAME")  { '' } %>
   password: <%= ENV.fetch("DB_PASSWORD")  { '' } %>
-
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
@@ -83,6 +82,4 @@ test:
 #
 production:
   <<: *default
-  database: ndibd_production
-  username: ndibd
-  password: <%= ENV['NDIBD_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
